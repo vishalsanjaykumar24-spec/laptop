@@ -1,0 +1,2162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreTech Solutions Pvt Ltd | Quality Used Laptops Since 2020</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #ff6600;
+            --accent-color: #ff9900;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --success-color: #28a745;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-right: 20px;
+        }
+
+        .contact-info i {
+            margin-right: 5px;
+            color: var(--secondary-color);
+        }
+
+        .social-icons a {
+            color: white;
+            margin-left: 15px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+
+        .main-header {
+            padding: 15px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .logo-text span {
+            color: var(--secondary-color);
+        }
+
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 8px 5px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        nav ul li a:hover, 
+        nav ul li a.active {
+            color: var(--secondary-color);
+        }
+
+        .cart-icon {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--secondary-color);
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin: 20px 0 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            flex-grow: 1;
+            padding: 15px 20px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .search-box button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Page Styles */
+        .page {
+            display: none;
+            padding: 20px 0 40px;
+            min-height: 70vh;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Home Page */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.9)), url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Products Page */
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 15px;
+            background-color: white;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .product-img {
+            height: 200px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+            height: 50px;
+            overflow: hidden;
+        }
+
+        .product-price {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin: 10px 0;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+
+        .discount {
+            color: var(--success-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        .product-specs {
+            margin: 15px 0;
+            font-size: 0.9rem;
+            color: var(--gray-color);
+            flex-grow: 1;
+        }
+
+        .product-specs li {
+            margin-bottom: 5px;
+            list-style-position: inside;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn-cart, .btn-wishlist, .btn-buy {
+            flex: 1;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .btn-cart {
+            background-color: var(--light-gray);
+            color: var(--dark-color);
+        }
+
+        .btn-wishlist {
+            background-color: white;
+            color: var(--secondary-color);
+            border: 1px solid var(--secondary-color);
+        }
+
+        .btn-buy {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-cart:hover {
+            background-color: var(--gray-color);
+        }
+
+        .btn-wishlist:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-buy:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* About Page */
+        .about-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .company-details {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: var(--light-color);
+            border-radius: 8px;
+        }
+
+        .company-details h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .company-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .company-details i {
+            color: var(--secondary-color);
+            width: 20px;
+        }
+
+        .policy-section {
+            margin: 40px 0;
+        }
+
+        .policy-card {
+            background-color: white;
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .policy-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Services Page */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .service-features li {
+            margin-bottom: 8px;
+            list-style-position: inside;
+        }
+
+        /* Contact Page */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .contact-info {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            background-color: var(--light-color);
+            color: var(--secondary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p, 
+        .footer-section li {
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-links li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links i {
+            color: var(--secondary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Back to Home Button */
+        .back-home {
+            margin-bottom: 20px;
+        }
+
+        .back-home a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 4px;
+            background-color: var(--light-color);
+            transition: all 0.3s;
+        }
+
+        .back-home a:hover {
+            background-color: var(--light-gray);
+        }
+
+        /* Cart & Wishlist Pages */
+        .cart-container, .wishlist-container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .cart-item, .wishlist-item {
+            display: flex;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .cart-item-img, .wishlist-item-img {
+            width: 120px;
+            height: 120px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            border-radius: 8px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .cart-item-img img, .wishlist-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-details, .wishlist-item-details {
+            flex-grow: 1;
+        }
+
+        .cart-item-actions, .wishlist-item-actions {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .cart-summary, .wishlist-summary {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed var(--gray-color);
+        }
+
+        .total-row {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            border-bottom: none;
+        }
+
+        /* Checkout Page */
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .checkout-form {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .checkout-summary {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            align-self: start;
+        }
+
+        /* Search Results */
+        .search-results {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--gray-color);
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 9999;
+            animation: slideIn 0.3s ease;
+            display: none;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .contact-container,
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                display: none;
+                padding: 20px 0;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .top-bar-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .contact-info {
+                text-align: center;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .product-actions {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 50px 20px;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-item, .wishlist-item {
+                flex-direction: column;
+            }
+            
+            .cart-item-img, .wishlist-item-img {
+                width: 100%;
+                height: 200px;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Notification Container -->
+    <div class="notification" id="notification"></div>
+
+    <!-- Top Bar with Contact Info -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> 98867 45122</span>
+                <span><i class="fas fa-envelope"></i> ctskarmys@gmail.com</span>
+                <span><i class="fas fa-map-marker-alt"></i> Mysuru, Karnataka</span>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="container main-header">
+            <div class="header-content">
+                <a href="#" class="logo" data-page="home">
+                    <div class="logo-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Core<span>Tech</span> Solutions</h1>
+                        <p>Quality Used Laptops Since 2020</p>
+                    </div>
+                </a>
+
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="#" class="nav-link active" data-page="home"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="#" class="nav-link" data-page="products"><i class="fas fa-laptop"></i> Products</a></li>
+                        <li><a href="#" class="nav-link" data-page="services"><i class="fas fa-tools"></i> Services</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact"><i class="fas fa-address-book"></i> Contact</a></li>
+                        <li><a href="#" class="nav-link" data-page="wishlist"><i class="fas fa-heart"></i> Wishlist <span class="cart-count" id="wishlistCount">0</span></a></li>
+                        <li><a href="#" class="nav-link cart-icon" data-page="cart"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count" id="cartCount">0</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="container search-container" id="searchSection">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search for laptops by brand, model, or specifications...">
+            <button id="searchBtn"><i class="fas fa-search"></i> Search</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Back to Home Button (hidden on home page) -->
+        <div class="back-home" id="backHome">
+            <a href="#" data-page="home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+
+        <!-- Home Page -->
+        <div class="page active" id="home">
+            <div class="hero">
+                <h2>Welcome to CoreTech Solutions</h2>
+                <p>Your trusted source for high-quality, affordable used laptops since 2020. We provide reliable refurbished laptops with warranty and excellent customer support.</p>
+                <a href="#" class="btn nav-link" data-page="products">Browse Laptops</a>
+            </div>
+            
+            <section>
+                <h2 style="color: var(--primary-color); margin-bottom: 20px; font-size: 1.8rem;">Why Choose CoreTech Solutions?</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-laptop-medical"></i>
+                        </div>
+                        <h3>Quality Tested</h3>
+                        <p>All laptops undergo 25-point quality check to ensure they meet our high standards for performance and reliability.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Warranty Included</h3>
+                        <p>Every laptop comes with a 6-month warranty and 15-day replacement policy for your peace of mind.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Expert Support</h3>
+                        <p>Our team provides expert repair and upgrade services to extend the life of your device.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <h3>Best Price Guarantee</h3>
+                        <p>We offer the best prices for used laptops with various financing options available.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section style="margin-top: 50px;">
+                <h2 style="color: var(--primary-color); margin-bottom: 20px; font-size: 1.8rem;">Featured Laptops</h2>
+                <div class="products-grid" id="featuredLaptops">
+                    <!-- Featured laptops will be loaded here by JavaScript -->
+                </div>
+            </section>
+        </div>
+
+        <!-- About Us Page -->
+        <div class="page" id="about">
+            <h1 style="color: var(--primary-color); margin-bottom: 20px;">About CoreTech Solutions Pvt Ltd</h1>
+            
+            <div class="about-content">
+                <p>Founded in 2020, <strong>CoreTech Solutions Pvt Ltd</strong> has been providing affordable, reliable used laptops to individuals, students, and businesses in Mysuru and across Karnataka. Our mission is to bridge the digital divide by making quality computing accessible to everyone while promoting sustainability through the reuse of technology.</p>
+                
+                <div class="company-details">
+                    <h3><i class="fas fa-building"></i> Company Details</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> 345/1 d 12/1, Krishna Vilas Rd, Devaraja Mohalla, Chamrajpura, Mysuru, Karnataka 570004</p>
+                    <p><i class="fas fa-phone"></i> <strong>Contact:</strong> 98867 45122</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> ctskarmys@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> <strong>Business Hours:</strong> Monday to Saturday: 10:00 AM - 7:00 PM</p>
+                </div>
+                
+                <h2 style="color: var(--primary-color); margin: 30px 0 20px;">Our Mission & Vision</h2>
+                
+                <div class="policy-card">
+                    <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
+                    <p>To provide high-quality, affordable used laptops and computing solutions that empower individuals and businesses while promoting sustainability through the reuse of technology. We aim to make technology accessible to students, professionals, and small businesses who need reliable computing without the high cost of new devices.</p>
+                </div>
+                
+                <div class="policy-card">
+                    <h4><i class="fas fa-eye"></i> Our Vision</h4>
+                    <p>To become the most trusted name in refurbished electronics in Karnataka, recognized for our commitment to quality, customer service, and environmental responsibility. We envision a future where everyone has access to reliable technology, and electronic waste is minimized through responsible reuse and recycling.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2 style="color: var(--primary-color); margin: 30px 0 20px;">Return and Replacement Policy</h2>
+                    
+                    <div class="policy-card">
+                        <h4><i class="fas fa-exchange-alt"></i> Return Policy</h4>
+                        <p>We offer a <strong>7-day return policy</strong> from the date of delivery if the product has any manufacturing defect or is not as described. The product must be in its original condition with all accessories, packaging, and documentation.</p>
+                    </div>
+                    
+                    <div class="policy-card">
+                        <h4><i class="fas fa-ban"></i> Non-Returnable Conditions</h4>
+                        <p><strong>No return on damaged and misuse of product:</strong> Products that show physical damage, liquid damage, or signs of misuse will not be eligible for return. Software issues caused by customer-installed programs or OS modifications are also not covered.</p>
+                    </div>
+                    
+                    <div class="policy-card">
+                        <h4><i class="fas fa-sync-alt"></i> Replacement Policy</h4>
+                        <p>We offer a <strong>15-day replacement policy</strong> for defective products. If the laptop develops a hardware issue within 15 days of purchase, we will replace it with the same or equivalent model subject to availability and verification of the defect by our technicians.</p>
+                    </div>
+                    
+                    <div class="policy-card">
+                        <h4><i class="fas fa-wrench"></i> Warranty Information</h4>
+                        <p>All laptops come with a <strong>6-month warranty</strong> covering manufacturing defects and hardware failures under normal usage conditions. The warranty does not cover physical damage, liquid damage, or issues caused by unauthorized repairs or modifications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Page -->
+        <div class="page" id="products">
+            <div class="products-header">
+                <h1 style="color: var(--primary-color);">Our Laptop Collection</h1>
+                <div class="filter-options">
+                    <button class="filter-btn active" data-filter="all">All Laptops</button>
+                    <button class="filter-btn" data-filter="budget">Budget</button>
+                    <button class="filter-btn" data-filter="business">Business</button>
+                    <button class="filter-btn" data-filter="gaming">Gaming</button>
+                </div>
+            </div>
+            
+            <p style="margin-bottom: 20px; color: var(--gray-color);">Browse our collection of quality used laptops. All devices are professionally tested and refurbished.</p>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Services Page -->
+        <div class="page" id="services">
+            <h1 style="color: var(--primary-color); margin-bottom: 20px;">Our Services</h1>
+            <p style="margin-bottom: 30px;">At CoreTech Solutions, we offer a range of services to keep your laptop running smoothly and efficiently.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Laptop Repair</h3>
+                    <p>Comprehensive repair services for all laptop brands and models. Our certified technicians can fix hardware and software issues.</p>
+                    <ul class="service-features">
+                        <li>Screen replacement</li>
+                        <li>Keyboard repair/replacement</li>
+                        <li>Battery replacement</li>
+                        <li>Motherboard repair</li>
+                        <li>Charger port repair</li>
+                        <li>Software troubleshooting</li>
+                    </ul>
+                    <a href="#" class="btn" style="margin-top: 15px;" data-page="contact">Book Repair</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Upgrade Services</h3>
+                    <p>Enhance your laptop's performance with our upgrade services. We can extend the life of your device with the right upgrades.</p>
+                    <ul class="service-features">
+                        <li>RAM upgrades (up to 32GB)</li>
+                        <li>SSD installation</li>
+                        <li>HDD to SSD conversion</li>
+                        <li>Battery upgrades</li>
+                        <li>OS installation/upgrades</li>
+                        <li>Thermal paste replacement</li>
+                    </ul>
+                    <a href="#" class="btn" style="margin-top: 15px;" data-page="contact">Inquire About Upgrades</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Warranty & Support</h3>
+                    <p>All our laptops come with warranty for your peace of mind. We also offer extended warranty options and after-sales support.</p>
+                    <ul class="service-features">
+                        <li>6-month standard warranty</li>
+                        <li>Extended warranty options</li>
+                        <li>On-site service available (Mysuru)</li>
+                        <li>Quick replacement guarantee</li>
+                        <li>Free technical support</li>
+                        <li>Data backup & transfer service</li>
+                    </ul>
+                    <a href="#" class="btn" style="margin-top: 15px;" data-page="contact">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Us Page -->
+        <div class="page" id="contact">
+            <h1 style="color: var(--primary-color); margin-bottom: 20px;">Contact Us</h1>
+            <p style="margin-bottom: 30px;">Get in touch with us for inquiries about our products and services. We're here to help!</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 style="color: var(--primary-color); margin-bottom: 20px;">Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>345/1 d 12/1, Krishna Vilas Rd,<br>Devaraja Mohalla, Chamrajpura,<br>Mysuru, Karnataka 570004</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p>98867 45122</p>
+                            <p>Mon-Sat: 10am-7pm</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>ctskarmys@gmail.com</p>
+                            <p>sales@coretechsolutions.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Monday - Saturday: 10:00 AM - 7:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>We are located in the heart of Mysuru, near Devaraja Market. Easy access from all parts of the city.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 style="color: var(--primary-color); margin-bottom: 20px;">Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="product-inquiry">Product Inquiry</option>
+                                <option value="repair-service">Repair Service</option>
+                                <option value="upgrade-service">Upgrade Service</option>
+                                <option value="warranty-claim">Warranty Claim</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Page -->
+        <div class="page" id="cart">
+            <h1 style="color: var(--primary-color); margin-bottom: 20px;">Your Shopping Cart</h1>
+            
+            <div class="cart-container">
+                <div id="cartItems">
+                    <!-- Cart items will be loaded here by JavaScript -->
+                </div>
+                
+                <div class="cart-summary" id="cartSummary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="cartSubtotal">₹0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping:</span>
+                        <span id="cartShipping">₹99</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (18% GST):</span>
+                        <span id="cartTax">₹0</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Total:</span>
+                        <span id="cartTotal">₹0</span>
+                    </div>
+                    <a href="#" class="btn" data-page="checkout" style="width: 100%; text-align: center; margin-top: 20px; display: block;">Proceed to Checkout</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wishlist Page -->
+        <div class="page" id="wishlist">
+            <h1 style="color: var(--primary-color); margin-bottom: 20px;">Your Wishlist</h1>
+            
+            <div class="wishlist-container">
+                <div id="wishlistItems">
+                    <!-- Wishlist items will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkout Page -->
+        <div class="page" id="checkout">
+            <h1 style="color: var(--primary-color); margin-bottom: 20px;">Checkout</h1>
+            
+            <div class="checkout-container">
+                <div class="checkout-form">
+                    <h3 style="color: var(--primary-color); margin-bottom: 20px;">Shipping Information</h3>
+                    <form id="checkoutForm">
+                        <div class="form-group">
+                            <label for="checkoutName">Full Name *</label>
+                            <input type="text" id="checkoutName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="checkoutEmail">Email Address *</label>
+                            <input type="email" id="checkoutEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="checkoutPhone">Phone Number *</label>
+                            <input type="tel" id="checkoutPhone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="checkoutAddress">Address *</label>
+                            <textarea id="checkoutAddress" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="checkoutCity">City *</label>
+                            <input type="text" id="checkoutCity" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="checkoutPincode">Pincode *</label>
+                            <input type="text" id="checkoutPincode" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="checkoutState">State *</label>
+                            <input type="text" id="checkoutState" required value="Karnataka">
+                        </div>
+                        
+                        <h3 style="color: var(--primary-color); margin: 30px 0 20px;">Payment Method</h3>
+                        
+                        <div class="form-group">
+                            <div>
+                                <input type="radio" id="cod" name="payment" value="cod" checked>
+                                <label for="cod">Cash on Delivery</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="online" name="payment" value="online">
+                                <label for="online">Online Payment (Credit/Debit Card, UPI)</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn">Place Order</button>
+                    </form>
+                </div>
+                
+                <div class="checkout-summary">
+                    <h3 style="color: var(--primary-color); margin-bottom: 20px;">Order Summary</h3>
+                    <div id="checkoutSummary">
+                        <!-- Order summary will be loaded here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Results Page -->
+        <div class="page" id="searchResults">
+            <h1 style="color: var(--primary-color); margin-bottom: 20px;">Search Results</h1>
+            
+            <div class="search-results">
+                <div id="searchResultsContent">
+                    <!-- Search results will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>CoreTech Solutions Pvt Ltd</h3>
+                    <p>Your trusted source for quality used laptops and computing solutions since 2020. We provide affordable, reliable technology with excellent customer support.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="nav-link" data-page="home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#" class="nav-link" data-page="products"><i class="fas fa-chevron-right"></i> Products</a></li>
+                        <li><a href="#" class="nav-link" data-page="services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 345/1 d 12/1, Krishna Vilas Rd, Mysuru, Karnataka 570004</p>
+                    <p><i class="fas fa-phone"></i> 98867 45122</p>
+                    <p><i class="fas fa-envelope"></i> ctskarmys@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 10:00 AM - 7:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 CoreTech Solutions Pvt Ltd. All rights reserved. | Since 2020</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Product Data with Real Images from Google
+        const laptops = [
+            {
+                id: 1,
+                name: "Dell Latitude 5400",
+                brand: "Dell",
+                category: "business",
+                price: 24999,
+                originalPrice: 34999,
+                specs: ["Intel Core i5-8365U", "8GB DDR4 RAM", "256GB SSD", "14\" FHD Display", "Windows 10 Pro"],
+                image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Business-grade laptop with excellent build quality and performance."
+            },
+            {
+                id: 2,
+                name: "HP EliteBook 840 G5",
+                brand: "HP",
+                category: "business",
+                price: 27999,
+                originalPrice: 39999,
+                specs: ["Intel Core i7-8650U", "16GB DDR4 RAM", "512GB SSD", "14\" IPS Display", "Windows 11 Pro"],
+                image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Powerful business laptop with high-performance specs."
+            },
+            {
+                id: 3,
+                name: "Lenovo ThinkPad T480",
+                brand: "Lenovo",
+                category: "business",
+                price: 22999,
+                originalPrice: 32999,
+                specs: ["Intel Core i5-8250U", "8GB DDR4 RAM", "500GB HDD + 128GB SSD", "14\" HD Display", "Windows 10 Pro"],
+                image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Classic ThinkPad reliability with excellent keyboard."
+            },
+            {
+                id: 4,
+                name: "Apple MacBook Air 2020",
+                brand: "Apple",
+                category: "business",
+                price: 59999,
+                originalPrice: 84999,
+                specs: ["Apple M1 Chip", "8GB Unified Memory", "256GB SSD", "13.3\" Retina Display", "macOS"],
+                image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Lightweight and powerful Apple laptop with M1 chip."
+            },
+            {
+                id: 5,
+                name: "Asus VivoBook 15",
+                brand: "Asus",
+                category: "budget",
+                price: 18999,
+                originalPrice: 27999,
+                specs: ["Intel Core i3-10110U", "8GB DDR4 RAM", "1TB HDD", "15.6\" HD Display", "Windows 10"],
+                image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Affordable laptop for students and everyday use."
+            },
+            {
+                id: 6,
+                name: "Acer Aspire 5",
+                brand: "Acer",
+                category: "budget",
+                price: 21999,
+                originalPrice: 31999,
+                specs: ["Intel Core i5-1035G1", "8GB DDR4 RAM", "512GB SSD", "15.6\" FHD Display", "Windows 11"],
+                image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Great value laptop with good performance for the price."
+            },
+            {
+                id: 7,
+                name: "Dell Inspiron 15 3000",
+                brand: "Dell",
+                category: "budget",
+                price: 19999,
+                originalPrice: 28999,
+                specs: ["Intel Core i3-1115G4", "8GB DDR4 RAM", "1TB HDD", "15.6\" HD Display", "Windows 11"],
+                image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Reliable budget laptop from Dell for everyday tasks."
+            },
+            {
+                id: 8,
+                name: "HP Pavilion Gaming 15",
+                brand: "HP",
+                category: "gaming",
+                price: 44999,
+                originalPrice: 64999,
+                specs: ["Intel Core i5-9300H", "8GB DDR4 RAM", "512GB SSD + 1TB HDD", "NVIDIA GTX 1650", "15.6\" FHD 144Hz"],
+                image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Gaming laptop with dedicated graphics for smooth gameplay."
+            },
+            {
+                id: 9,
+                name: "Lenovo Legion Y540",
+                brand: "Lenovo",
+                category: "gaming",
+                price: 51999,
+                originalPrice: 74999,
+                specs: ["Intel Core i7-9750H", "16GB DDR4 RAM", "1TB SSD", "NVIDIA RTX 2060", "15.6\" FHD 144Hz"],
+                image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "High-performance gaming laptop with RTX graphics."
+            },
+            {
+                id: 10,
+                name: "Asus ROG Strix G15",
+                brand: "Asus",
+                category: "gaming",
+                price: 56999,
+                originalPrice: 79999,
+                specs: ["AMD Ryzen 7 4800H", "16GB DDR4 RAM", "1TB SSD", "NVIDIA RTX 3050 Ti", "15.6\" FHD 144Hz"],
+                image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                description: "Powerful gaming laptop with AMD processor and RTX graphics."
+            }
+        ];
+
+        // Application State
+        let cart = JSON.parse(localStorage.getItem('coretech_cart')) || [];
+        let wishlist = JSON.parse(localStorage.getItem('coretech_wishlist')) || [];
+        let currentPage = "home";
+        let currentFilter = "all";
+
+        // DOM Elements
+        const pages = document.querySelectorAll('.page');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const backHome = document.getElementById('backHome');
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const productsGrid = document.getElementById('productsGrid');
+        const featuredLaptops = document.getElementById('featuredLaptops');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cartItems = document.getElementById('cartItems');
+        const cartSummary = document.getElementById('cartSummary');
+        const wishlistItems = document.getElementById('wishlistItems');
+        const checkoutSummary = document.getElementById('checkoutSummary');
+        const searchResultsContent = document.getElementById('searchResultsContent');
+        const cartCount = document.getElementById('cartCount');
+        const wishlistCount = document.getElementById('wishlistCount');
+        const notification = document.getElementById('notification');
+
+        // Initialize the app
+        function initApp() {
+            renderProducts();
+            renderFeaturedLaptops();
+            updateCartCount();
+            updateWishlistCount();
+            
+            // Show back home button on all pages except home
+            backHome.style.display = 'none';
+            
+            // Set default cart content
+            renderCart();
+        }
+
+        // Save state to localStorage
+        function saveState() {
+            localStorage.setItem('coretech_cart', JSON.stringify(cart));
+            localStorage.setItem('coretech_wishlist', JSON.stringify(wishlist));
+        }
+
+        // Show notification
+        function showNotification(message, type = 'success') {
+            notification.textContent = message;
+            notification.style.backgroundColor = type === 'success' ? 'var(--secondary-color)' : '#ff4444';
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                    notification.style.animation = 'slideIn 0.3s ease';
+                }, 300);
+            }, 3000);
+        }
+
+        // Render products based on current filter
+        function renderProducts() {
+            productsGrid.innerHTML = '';
+            
+            let filteredLaptops = laptops;
+            if (currentFilter !== 'all') {
+                filteredLaptops = laptops.filter(laptop => laptop.category === currentFilter);
+            }
+            
+            if (filteredLaptops.length === 0) {
+                productsGrid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                        <i class="fas fa-laptop" style="font-size: 3rem; color: var(--light-gray); margin-bottom: 20px;"></i>
+                        <h3>No laptops found in this category</h3>
+                        <p>Try selecting a different category</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            filteredLaptops.forEach(laptop => {
+                const discount = Math.round(((laptop.originalPrice - laptop.price) / laptop.originalPrice) * 100);
+                
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.setAttribute('data-category', laptop.category);
+                productCard.innerHTML = `
+                    <div class="product-badge">${discount}% OFF</div>
+                    <div class="product-img">
+                        <img src="${laptop.image}" alt="${laptop.name}" onerror="this.src='https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${laptop.name}</h3>
+                        <div class="product-price">₹${laptop.price.toLocaleString()}<span class="original-price">₹${laptop.originalPrice.toLocaleString()}</span><span class="discount">${discount}% off</span></div>
+                        <ul class="product-specs">
+                            ${laptop.specs.map(spec => `<li>${spec}</li>`).join('')}
+                        </ul>
+                        <p style="font-size: 0.9rem; color: var(--gray-color); margin: 10px 0;">${laptop.description}</p>
+                        <div class="product-actions">
+                            <button class="btn-cart" onclick="addToCart(${laptop.id})"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="btn-wishlist" onclick="addToWishlist(${laptop.id})"><i class="fas fa-heart"></i> Wishlist</button>
+                            <button class="btn-buy" onclick="buyNow(${laptop.id})"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                `;
+                
+                productsGrid.appendChild(productCard);
+            });
+        }
+
+        // Render featured laptops on home page
+        function renderFeaturedLaptops() {
+            featuredLaptops.innerHTML = '';
+            
+            // Get 4 random laptops
+            const shuffled = [...laptops].sort(() => 0.5 - Math.random());
+            const featured = shuffled.slice(0, 4);
+            
+            featured.forEach(laptop => {
+                const discount = Math.round(((laptop.originalPrice - laptop.price) / laptop.originalPrice) * 100);
+                
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-badge">${discount}% OFF</div>
+                    <div class="product-img">
+                        <img src="${laptop.image}" alt="${laptop.name}" onerror="this.src='https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${laptop.name}</h3>
+                        <div class="product-price">₹${laptop.price.toLocaleString()}<span class="original-price">₹${laptop.originalPrice.toLocaleString()}</span></div>
+                        <ul class="product-specs">
+                            ${laptop.specs.slice(0, 3).map(spec => `<li>${spec}</li>`).join('')}
+                        </ul>
+                        <div class="product-actions">
+                            <button class="btn-cart" onclick="addToCart(${laptop.id})"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="btn-buy" onclick="buyNow(${laptop.id})"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                `;
+                
+                featuredLaptops.appendChild(productCard);
+            });
+        }
+
+        // Add product to cart
+        function addToCart(productId) {
+            const product = laptops.find(l => l.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: 1
+                });
+            }
+            
+            updateCartCount();
+            saveState();
+            showNotification(`${product.name} added to cart!`);
+            
+            // If we're on the cart page, update it
+            if (currentPage === 'cart') {
+                renderCart();
+            }
+        }
+
+        // Add product to wishlist
+        function addToWishlist(productId) {
+            const product = laptops.find(l => l.id === productId);
+            const existingItem = wishlist.find(item => item.id === productId);
+            
+            if (!existingItem) {
+                wishlist.push(product);
+                updateWishlistCount();
+                saveState();
+                showNotification(`${product.name} added to wishlist!`);
+                
+                // If we're on the wishlist page, update it
+                if (currentPage === 'wishlist') {
+                    renderWishlist();
+                }
+            } else {
+                showNotification(`${product.name} is already in your wishlist!`);
+            }
+        }
+
+        // Buy now function
+        function buyNow(productId) {
+            addToCart(productId);
+            navigateToPage('checkout');
+        }
+
+        // Update cart count display
+        function updateCartCount() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+
+        // Update wishlist count display
+        function updateWishlistCount() {
+            wishlistCount.textContent = wishlist.length;
+        }
+
+        // Render cart page
+        function renderCart() {
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-shopping-cart" style="font-size: 3rem; margin-bottom: 20px; color: var(--light-gray);"></i>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some laptops to your cart to see them here.</p>
+                        <a href="#" class="btn nav-link" data-page="products" style="margin-top: 15px;">Browse Products</a>
+                    </div>
+                `;
+                cartSummary.style.display = 'none';
+                return;
+            }
+            
+            cartSummary.style.display = 'block';
+            
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-img">
+                        <img src="${item.image}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                    <div class="cart-item-details">
+                        <h3>${item.name}</h3>
+                        <p class="product-price">₹${item.price.toLocaleString()}</p>
+                        <div class="product-specs">
+                            ${item.specs.map(spec => `<span style="background: #f0f0f0; padding: 2px 8px; border-radius: 4px; margin-right: 5px; font-size: 0.8rem;">${spec}</span>`).join('')}
+                        </div>
+                        <div style="margin-top: 10px; display: flex; align-items: center;">
+                            <button onclick="updateQuantity(${item.id}, -1)" style="background: var(--light-gray); border: none; width: 30px; height: 30px; border-radius: 4px; cursor: pointer;">-</button>
+                            <span style="margin: 0 10px; font-weight: bold;">${item.quantity}</span>
+                            <button onclick="updateQuantity(${item.id}, 1)" style="background: var(--light-gray); border: none; width: 30px; height: 30px; border-radius: 4px; cursor: pointer;">+</button>
+                            <span style="margin-left: 20px; font-weight: bold;">Total: ₹${(item.price * item.quantity).toLocaleString()}</span>
+                        </div>
+                    </div>
+                    <div class="cart-item-actions">
+                        <button class="btn-wishlist" onclick="moveToWishlist(${item.id})"><i class="fas fa-heart"></i></button>
+                        <button class="btn-cart" onclick="removeFromCart(${item.id})" style="background: #ff4444; color: white;"><i class="fas fa-trash"></i></button>
+                    </div>
+                `;
+                
+                cartItems.appendChild(cartItem);
+            });
+            
+            // Update cart summary
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            const tax = subtotal * 0.18;
+            const shipping = 99;
+            const total = subtotal + tax + shipping;
+            
+            document.getElementById('cartSubtotal').textContent = `₹${subtotal.toLocaleString()}`;
+            document.getElementById('cartTax').textContent = `₹${tax.toLocaleString()}`;
+            document.getElementById('cartTotal').textContent = `₹${total.toLocaleString()}`;
+        }
+
+        // Render wishlist page
+        function renderWishlist() {
+            wishlistItems.innerHTML = '';
+            
+            if (wishlist.length === 0) {
+                wishlistItems.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-heart" style="font-size: 3rem; margin-bottom: 20px; color: var(--light-gray);"></i>
+                        <h3>Your wishlist is empty</h3>
+                        <p>Add some laptops to your wishlist to see them here.</p>
+                        <a href="#" class="btn nav-link" data-page="products" style="margin-top: 15px;">Browse Products</a>
+                    </div>
+                `;
+                return;
+            }
+            
+            wishlist.forEach(item => {
+                const wishlistItem = document.createElement('div');
+                wishlistItem.className = 'wishlist-item';
+                wishlistItem.innerHTML = `
+                    <div class="wishlist-item-img">
+                        <img src="${item.image}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                    <div class="wishlist-item-details">
+                        <h3>${item.name}</h3>
+                        <p class="product-price">₹${item.price.toLocaleString()}</p>
+                        <div class="product-specs">
+                            ${item.specs.map(spec => `<span style="background: #f0f0f0; padding: 2px 8px; border-radius: 4px; margin-right: 5px; font-size: 0.8rem;">${spec}</span>`).join('')}
+                        </div>
+                        <p style="margin-top: 10px; color: var(--gray-color); font-size: 0.9rem;">${item.description}</p>
+                    </div>
+                    <div class="wishlist-item-actions">
+                        <button class="btn-cart" onclick="addToCart(${item.id})"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="btn-buy" onclick="buyNow(${item.id})"><i class="fas fa-bolt"></i> Buy Now</button>
+                        <button class="btn-wishlist" onclick="removeFromWishlist(${item.id})" style="background: #ff4444; color: white; margin-top: 10px;"><i class="fas fa-trash"></i> Remove</button>
+                    </div>
+                `;
+                
+                wishlistItems.appendChild(wishlistItem);
+            });
+        }
+
+        // Update checkout summary
+        function renderCheckoutSummary() {
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            const tax = subtotal * 0.18;
+            const shipping = 99;
+            const total = subtotal + tax + shipping;
+            
+            checkoutSummary.innerHTML = `
+                <div class="summary-row">
+                    <span>Subtotal (${cart.reduce((total, item) => total + item.quantity, 0)} items):</span>
+                    <span>₹${subtotal.toLocaleString()}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping:</span>
+                    <span>₹${shipping.toLocaleString()}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax (18% GST):</span>
+                    <span>₹${tax.toLocaleString()}</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>Total:</span>
+                    <span>₹${total.toLocaleString()}</span>
+                </div>
+            `;
+        }
+
+        // Update item quantity in cart
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                
+                if (item.quantity <= 0) {
+                    cart = cart.filter(item => item.id !== productId);
+                }
+                
+                updateCartCount();
+                saveState();
+                renderCart();
+            }
+        }
+
+        // Remove item from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartCount();
+            saveState();
+            renderCart();
+            showNotification('Item removed from cart');
+        }
+
+        // Remove item from wishlist
+        function removeFromWishlist(productId) {
+            wishlist = wishlist.filter(item => item.id !== productId);
+            updateWishlistCount();
+            saveState();
+            renderWishlist();
+            showNotification('Item removed from wishlist');
+        }
+
+        // Move item from cart to wishlist
+        function moveToWishlist(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                addToWishlist(productId);
+                removeFromCart(productId);
+            }
+        }
+
+        // Search functionality
+        function performSearch() {
+            const query = searchInput.value.toLowerCase().trim();
+            
+            if (query === '') {
+                showNotification('Please enter a search term', 'error');
+                return;
+            }
+            
+            const results = laptops.filter(laptop => 
+                laptop.name.toLowerCase().includes(query) ||
+                laptop.brand.toLowerCase().includes(query) ||
+                laptop.description.toLowerCase().includes(query) ||
+                laptop.specs.some(spec => spec.toLowerCase().includes(query))
+            );
+            
+            navigateToPage('searchResults');
+            
+            if (results.length === 0) {
+                searchResultsContent.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 20px; color: var(--light-gray);"></i>
+                        <h3>No laptops found for "${query}"</h3>
+                        <p>Try searching with different keywords.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            searchResultsContent.innerHTML = `
+                <p style="margin-bottom: 20px;">Found ${results.length} laptop(s) for "${query}"</p>
+                <div class="products-grid">
+                    ${results.map(laptop => {
+                        const discount = Math.round(((laptop.originalPrice - laptop.price) / laptop.originalPrice) * 100);
+                        return `
+                            <div class="product-card">
+                                <div class="product-badge">${discount}% OFF</div>
+                                <div class="product-img">
+                                    <img src="${laptop.image}" alt="${laptop.name}" onerror="this.src='https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">${laptop.name}</h3>
+                                    <div class="product-price">₹${laptop.price.toLocaleString()}<span class="original-price">₹${laptop.originalPrice.toLocaleString()}</span></div>
+                                    <ul class="product-specs">
+                                        ${laptop.specs.map(spec => `<li>${spec}</li>`).join('')}
+                                    </ul>
+                                    <div class="product-actions">
+                                        <button class="btn-cart" onclick="addToCart(${laptop.id})"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                                        <button class="btn-buy" onclick="buyNow(${laptop.id})"><i class="fas fa-bolt"></i> Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+        }
+
+        // Navigate to a page
+        function navigateToPage(pageId) {
+            // Update current page
+            currentPage = pageId;
+            
+            // Hide all pages
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show the selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation links
+            navLinks.forEach(link => {
+                if (link.getAttribute('data-page') === pageId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            
+            // Show/hide back home button
+            if (pageId === 'home') {
+                backHome.style.display = 'none';
+            } else {
+                backHome.style.display = 'block';
+            }
+            
+            // Update search bar visibility
+            if (pageId === 'products' || pageId === 'home') {
+                document.getElementById('searchSection').style.display = 'flex';
+            } else {
+                document.getElementById('searchSection').style.display = 'none';
+            }
+            
+            // Render page-specific content
+            if (pageId === 'cart') {
+                renderCart();
+            } else if (pageId === 'wishlist') {
+                renderWishlist();
+            } else if (pageId === 'checkout') {
+                renderCheckoutSummary();
+            }
+            
+            // Close mobile menu if open
+            if (window.innerWidth <= 768) {
+                mainNav.classList.remove('active');
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Event Listeners
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.getAttribute('data-page');
+                navigateToPage(pageId);
+            });
+        });
+
+        // Back to home button
+        document.querySelector('.back-home a').addEventListener('click', (e) => {
+            e.preventDefault();
+            navigateToPage('home');
+        });
+
+        // Logo click to home
+        document.querySelector('.logo').addEventListener('click', (e) => {
+            e.preventDefault();
+            navigateToPage('home');
+        });
+
+        // Search functionality
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Filter buttons
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.getAttribute('data-filter');
+                renderProducts();
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            showNotification('Thank you for your message! We will contact you soon.');
+            e.target.reset();
+        });
+
+        // Checkout form submission
+        document.getElementById('checkoutForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            showNotification('Order placed successfully! You will receive a confirmation call shortly.');
+            
+            // Clear cart after successful order
+            cart = [];
+            updateCartCount();
+            saveState();
+            
+            // Reset form
+            e.target.reset();
+            
+            // Navigate to home page
+            setTimeout(() => navigateToPage('home'), 2000);
+        });
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', initApp);
+
+        // Handle image loading errors
+        window.addEventListener('error', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.target.src = 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';
+            }
+        }, true);
+    </script>
+</body>
+</html>
